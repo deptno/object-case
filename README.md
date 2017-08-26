@@ -1,5 +1,7 @@
 # object-case
 
+> Object.entries MUST be supported
+
 ## installation
 
 ```bash
