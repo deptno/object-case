@@ -1,0 +1,33 @@
+{
+  "name": "object-case",
+  "version": "0.0.1",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/deptno/ts-module-boilerplate.git",
+  "author": "bglee <deptno@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^20.0.7",
+    "typescript": "^2.4.2"
+  },
+  "scripts": {
+    "prepublish": "tsc --outDir dist --declaration",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.(test|spec).(ts|tsx)"
+    ]
+  },
+  "dependencies": {
+    "change-case": "^3.0.1"
+  }
+}
