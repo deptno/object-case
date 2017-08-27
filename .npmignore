@@ -2,9 +2,8 @@
 
 .idea
 node_modules
-src/index.ts
+src
 preprocessor.js
-**/*.ts
 **/*spec.*
 tsconfig.json
 yarn.lock
