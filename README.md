@@ -12,9 +12,9 @@ npm i --save object-case
 
 ## api
 
-> camelCase
+> camelCase(a: T): T
 
-> snakeCase
+> snakeCase(a: T): T
 
 ## usage
 
