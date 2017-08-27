@@ -12,6 +12,21 @@ export const snakeCase = a => {
     return a
   }
 }
+
+const snakeCaseObject = a =>
+  Object
+    .entries(a)
+    .reduce((ret, [key, value]) => {
+      if (Array.isArray(value)) {
+        ret[snake(key)] = value.map(snakeCase)
+      } else if (typeof value === 'object') {
+        ret[snake(key)] = snakeCaseObject(value)
+      } else {
+        ret[snake(key)] = value
+      }
+      return ret
+    }, {})
+
 export const camelCase = a => {
   const type = typeof a
   if (Array.isArray(a)) {
@@ -25,19 +40,17 @@ export const camelCase = a => {
   }
 }
 
-const snakeCaseObject = a =>
-  Object
-    .entries(a)
-    .reduce((ret, [key, value]) => {
-      ret[snake(key)] = value
-      return ret
-    }, {})
 const camelCaseObject = a =>
   Object
     .entries(a)
     .reduce((ret, [key, value]) => {
-      ret[camel(key)] = value
+      if (Array.isArray(value)) {
+        ret[camel(key)] = value.map(camelCase)
+      } else if (typeof value === 'object') {
+        ret[camel(key)] = camelCaseObject(value)
+      } else {
+        ret[camel(key)] = value
+      }
       return ret
     }, {})
-
 
