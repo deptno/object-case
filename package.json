@@ -1,9 +1,12 @@
 {
   "name": "object-case",
-  "version": "0.0.1",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "repository": "https://github.com/deptno/ts-module-boilerplate.git",
+  "version": "0.1.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deptno/ts-module-boilerplate.git"
+  },
   "author": "bglee <deptno@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -11,7 +14,7 @@
     "typescript": "^2.4.2"
   },
   "scripts": {
-    "prepublish": "tsc --outDir dist --declaration",
+    "prepare": "npm run test && tsc --outDir dist --declaration",
     "test": "jest"
   },
   "jest": {
@@ -29,5 +32,20 @@
   },
   "dependencies": {
     "change-case": "^3.0.1"
-  }
+  },
+  "description": "change snake_case to camelCase, and reverse. object, array, primitive are supported",
+  "bugs": {
+    "url": "https://github.com/deptno/ts-module-boilerplate/issues"
+  },
+  "homepage": "https://github.com/deptno/ts-module-boilerplate#readme",
+  "keywords": [
+    "case",
+    "change",
+    "object",
+    "case",
+    "camelcase",
+    "snakecase",
+    "camel",
+    "case"
+  ]
 }
