@@ -38,7 +38,13 @@ describe('object-case', () => {
             "volume_7day": "127711.19528702",
             "buy_price": "4899000",
             "sell_price": "4905000",
-            "date": "1503832027820"
+            "date": "1503832027820",
+            "null_test": null,
+            "undefined_test": undefined,
+            "boolean_false_test": false,
+            "boolean_true_test": true,
+            "number_0_test": 0,
+            "number_1_test": 1,
           }
         ]
       }
@@ -58,7 +64,13 @@ describe('object-case', () => {
             "volume_7day": "127711.19528702",
             "buyPrice": "4899000",
             "sellPrice": "4905000",
-            "date": "1503832027820"
+            "date": "1503832027820",
+            "nullTest": null,
+            "undefinedTest": undefined,
+            "booleanFalseTest": false,
+            "booleanTrueTest": true,
+            "number_0Test": 0,
+            "number_1Test": 1,
           }
         ]
       }
