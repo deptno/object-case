@@ -26,28 +26,30 @@ export function snakeCase<T>(a: T): T {
 }
 
 function camelCaseObject<T>(a: T): T {
-  return Object.entries(a)
-    .reduce((ret, [key, value]) => {
-      if (Array.isArray(value)) {
-        ret[camel(key)] = value.map(camelCase)
-      } else if (value !== null && typeof value === 'object') {
-        ret[camel(key)] = camelCaseObject(value)
-      } else {
-        ret[camel(key)] = value
-      }
-      return ret
-    }, {} as T)
+  const ret = {} as T
+  for (let key in a) {
+    const value = a[key]
+    if (Array.isArray(value)) {
+      ret[camel(key)] = value.map(camelCase)
+    } else if (value !== null && typeof value === 'object') {
+      ret[camel(key)] = camelCaseObject(value)
+    } else {
+      ret[camel(key)] = value
+    }
+  }
+  return ret
 }
 function snakeCaseObject<T>(a: T): T {
-  return Object.entries(a)
-    .reduce((ret, [key, value]) => {
-      if (Array.isArray(value)) {
-        ret[snake(key)] = value.map(snakeCase)
-      } else if (value !== null && typeof value === 'object') {
-        ret[snake(key)] = snakeCaseObject(value)
-      } else {
-        ret[snake(key)] = value
-      }
-      return ret
-    }, {} as T)
+  const ret = {} as T
+  for (let key in a) {
+    const value = a[key]
+    if (Array.isArray(value)) {
+      ret[snake(key)] = value.map(snakeCase)
+    } else if (value !== null && typeof value === 'object') {
+      ret[snake(key)] = snakeCaseObject(value)
+    } else {
+      ret[snake(key)] = value
+    }
+  }
+  return ret
 }
